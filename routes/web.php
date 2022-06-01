@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', [App\Http\Controllers\LoginController::class, 'abrirView']);
+//Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);
+//Route::get('/slidebar', [App\Http\Controllers\SlidebarController::class, 'slidebar']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*Route::get('/', function () {
+    return view('index');
+});*/
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/contato', function () {
+    return view('contato');
 });
