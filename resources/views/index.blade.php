@@ -58,6 +58,7 @@
                 </div>
             </div>
         </header>
+
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
@@ -99,7 +100,7 @@
                 <div class="row g-0">
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/tanques.webp')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Administre seus tanques</h2>
+                        <h2>Administre seus tanques 2</h2>
                         <p class="lead mb-0">Deixe registrado quantos tanques você possui em sua fazenda, e quais as suas capacidades.</p>
                     </div>
                 </div>
@@ -112,6 +113,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Testimonials-->
         <section class="testimonials text-center bg-light">
             <div class="container">
