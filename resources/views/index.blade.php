@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- teste git -->
     </head>
     <body>
         <!-- Navigation-->
@@ -113,7 +114,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Testimonials-->
         <section class="testimonials text-center bg-light">
             <div class="container">
