@@ -20,7 +20,7 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand">OnVet</a>
-                <a class="btn btn-primary" href="/login">Ir para aplicação</a>
+                <a class="btn btn-primary" href="1/login">Ir para aplicação</a>
             </div>
         </nav>
         <!-- Masthead-->
