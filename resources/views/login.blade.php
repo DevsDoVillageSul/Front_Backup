@@ -15,6 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,600;0,800;0,900;1,200&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href= "{{css/styles.css}}" type="text/css">  
 </head>
 
 <body>
