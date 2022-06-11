@@ -21,7 +21,7 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="#!">OnVet</a>
-                <a class="btn btn-primary" href="http://localhost/onvet/public/login">Ir para aplicação</a>
+                <a class="btn btn-primary" href="/login">Ir para aplicação</a>
             </div>
         </nav>
         <!-- Masthead-->
