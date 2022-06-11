@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class PrincipalController extends Controller
 {
-    public function abrirView () {
+    public function index(){
         return view('index');
     }
-
 }
