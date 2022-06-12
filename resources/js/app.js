@@ -6,9 +6,6 @@
 
 require('./bootstrap');
 
-window._ = require("lodash");
-import "bootstrap"; 
-
 window.Vue = require('vue').default;
 
 /**
