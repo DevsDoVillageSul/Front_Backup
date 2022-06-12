@@ -14,7 +14,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+        <link href="/css/welcome.css" rel="stylesheet"/>
         <!-- teste git -->
     </head>
     <body>
@@ -102,21 +103,21 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="img/jv500.jpeg" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="img/jv.jpeg" alt="..." />
                             <h5>João Victor</h5>
                             <p class="font-weight-light mb-0">Desenvolvedor</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="img/gb500.jpeg" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="img/gb.jpeg" alt="..." />
                             <h5>Gabriel</h5>
                             <p class="font-weight-light mb-0">Desenvolvedor</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="img/jn.jpeg" alt="..." />
                             <h5>Júnio</h5>
                             <p class="font-weight-light mb-0">Orientador</p>
                         </div>
