@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\LoginController::class, 'abrirView']);
-//Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);
-//Route::get('/slidebar', [App\Http\Controllers\SlidebarController::class, 'slidebar']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,14 +13,31 @@ Route::get('/', [App\Http\Controllers\LoginController::class, 'abrirView']);
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('index');
-});*/
+});
 
-Route::get('/login', function () {
+Route::get('/teste', function () {
+    return view('teste');
+});
+
+Route::get('/loginNovo', function () {
     return view('login');
 });
 
-Route::get('/contato', function () {
-    return view('contato');
+Route::get('/error', function () {
+    return view('error.erro');
 });
+
+Route::get('/contato', function () {
+    return view('error.erro');
+});
+
+Route::get('/suporte', function () {
+    return view('error.erro');
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
