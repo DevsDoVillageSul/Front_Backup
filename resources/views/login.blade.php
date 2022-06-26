@@ -129,7 +129,7 @@
                 <img id="img" src="images\fundo\fundo.svg" alt="fundo">
             </div>
         </div>
-  
+
     </section> --}}
     <section class="vh-100">
         <div class="container-fluid h-custom loginN">
