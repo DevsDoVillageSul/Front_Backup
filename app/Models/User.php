@@ -2,43 +2,83 @@
 
 namespace App\Models;
 
+use App\Models\Security\Audit;
+use App\Models\Security\Permission;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use OwenIt\Auditing\Contracts\Auditable;
+use Auth;
 
-class User extends Authenticatable
+use App\Models\Security\Role;
+
+class User extends Authenticatable implements Auditable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable, \OwenIt\Auditing\Auditable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    public function auditLogs()
+    {
+        return $this->hasMany(Audit::class, 'user_id');
+    }
+
+    public function home()
+    {
+        return $this->belongsTo(Permission::class, 'home_id');
+    }
+
+    public function checkPermission($permissions)
+    {
+        $user = session('user');
+        if ($user->role_id == 1) {
+            return true;
+        }
+
+        foreach ($permissions as $permission) {
+            if ($user->permissions->search($permission) !== false) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('active', 1);
+    }
+
+    public function scopeFiltros($query, $request)
+    {
+        if (isset($request->search) && $request->search != "") {
+            $query->where(function ($q) use ($request) {
+                $q->where('name', 'like', "%{$request->search}%");
+            });
+        }
+
+        if (isset($request->active) && $request->active != "") {
+            $query->where(function ($q) use ($request) {
+                $q->where('active', $request->active);
+            });
+        }
+
+        return $query;
+    }
 }

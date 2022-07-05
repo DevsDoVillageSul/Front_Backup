@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ExemploController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +15,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Main Page Route
+// Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
-Auth::routes();
+Route::get('/error', function () {
+    return view('error.erro');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/loginNovo', function () {
+    return redirect('dashboard');
+})->name('home');
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'authenticate']);
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('dashboard', function () {
+        return redirect('security/role');
+    });
+    Route::get('exemplo', function () {
+        return redirect('security/role');
+});
+
+    include('modules/general/security.php');
+    include('modules/cadastro/index.php');      
+    include('modules/tema.php');
+    include('modules/data/endpoints.php');
+    include('modules/duvida/index.php');
+});
